@@ -13,7 +13,7 @@ fi
 MDIR="/usr/lib/modules/$(uname -r)"
 if [ ! -d "$MDIR" ]; then
     MDIR="/lib/modules/$(uname -r)"
-    if [ ! -d "$MDIR"]; then
+    if [ ! -d "$MDIR" ]; then
         echo "Error: Could not find module directory!" >&2
         exit 1
     fi
