@@ -10,10 +10,12 @@ if [ "$EUID" -ne 0 ]; then
    exit
 fi
 
+command -v dkms >/dev/null 2>&1 || { echo "dkms is required but it's not installed. Aborting."; exit 1; }
+
 MDIR="/usr/lib/modules/$(uname -r)"
 if [ ! -d "$MDIR" ]; then
     MDIR="/lib/modules/$(uname -r)"
-    if [ ! -d "$MDIR"]; then
+    if [ ! -d "$MDIR" ]; then
         echo "Error: Could not find module directory!" >&2
         exit 1
     fi
@@ -22,7 +24,7 @@ fi
 NEWMDIR="$MDIR/${DEST_MODULE_LOCATION[0]}"
 
 MFILE="$MDIR/kernel/drivers/input/mouse/${BUILT_MODULE_NAME[0]}.ko"
-NEWMFILE="$NEWMDIR/${BUILT_MODULE_NAME[0]}.ko"
+NEWMFILE="$NEWMDIR/dkms/${BUILT_MODULE_NAME[0]}.ko"
 
 M=psmouse-dkms-alpsv7
 V=$PACKAGE_VERSION
@@ -99,4 +101,8 @@ if ! modprobe psmouse; then
    rmmod psmouse
    modprobe psmouse || abort "Unable to modprobe old module! Sorry!"
 fi
-echo "ok."
+
+echo "Propagating the updates in the initramfs"
+update-initramfs -u -k all
+
+echo "DONE!"
