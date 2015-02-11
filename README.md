@@ -14,9 +14,9 @@ With this patched module, users can drive T440/T440s/T440p using the new touchpa
 Lenovo which brought back the physical buttons.
 ALPS passthrough is now working, 
 
-Under the 'configX11' folder, you can fond the files which you need to add under 
+Under the 'configX11' folder, you can find the files which you need to add under the 
 /etc/X11/xorg.conf.d/  path.
-Use 'xinput list' to double check that the MatchProduct string in the X11 configuration
+Use 'xinput list' to double-check that the 'MatchProduct' string in the X11 configuration
 files, matches the name of the detected (by your system) input devices.
 
 psmouse-dkms-alpsv7
