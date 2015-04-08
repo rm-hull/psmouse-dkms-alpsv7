@@ -19,6 +19,13 @@ system's '/etc/X11/xorg.conf.d'  path. First use 'xinput list' to double-check t
 'MatchProduct' string in the X11 configuration files, matches the name of the detected 
 (by your system) input devices.
 
+UPDATE 2
+========
+(April 2015)
+With Linux Kernel 4.0 there is naitive support for trackpoint (including scrooling ect) and touchpad (including multitouch): https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b314acaccd7e0d55314d96be4a33b5f50d0b3344
+Arch users can build and boot the linux-mainline PKGBUILD from AUR: https://bbs.archlinux.org/viewtopic.php?pid=1517933#p1517933
+
+
 psmouse-dkms-alpsv7
 ===================
 
