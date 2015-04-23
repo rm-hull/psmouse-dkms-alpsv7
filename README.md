@@ -9,8 +9,8 @@ willing to take the risk and try new experimental features.
 
 UPDATE
 =======
-This is a patched version of the psmouse kernel module, with support for ALPSv7 touchpads.
-With this patched module, users can drive T440/T440s/T440p (and potentially T/W540) using the new touchpad of 
+This is a backported (from kernel 4.0) version of the psmouse kernel module, with support for ALPSv7 touchpads.
+With this patched module, users can drive Thinkpad 14 (and potentially T440/T440s/T440p/T/W540) using the new touchpad of 
 Lenovo which brought back the physical buttons.
 ALPS passthrough is now working. 
 
@@ -21,8 +21,6 @@ system's '/etc/X11/xorg.conf.d'  path. First use 'xinput list' to double-check t
 
 psmouse-dkms-alpsv7
 ===================
-
-Linux kernel driver for newer ALPS touchpads (as of Feb 2015)
 
 QUICK START
 -----------
