@@ -34,7 +34,7 @@ QUICK START
 :loudspeaker: Make sure you have `dkms` and `linux-headers` installed in your system: :loudspeaker:
 ```sh
     sudo pacman -S dkms linux-headers            #for archlinux
-    sudo apt-get dkms linux-headers-$(uname -r)  #for ubuntu/debian
+    sudo apt-get install dkms linux-headers-$(uname -r)  #for ubuntu/debian
 ```
 
 Run the following commands in your shell **__as root__**:
