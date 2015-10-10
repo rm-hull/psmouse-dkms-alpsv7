@@ -1,7 +1,26 @@
+DISCLAIMER
+==========
+Use this software at your **OWN risk**.
+It is possible that under different OS/system configurations, or with different
+hardware parts and laptop models, this software can permanently damage your hardware.
+Always prefer original manufacturer's software (e.g. download from official 
+Lenovo/Dell etc. website) unless you really know what you are doing, and you are 
+willing to take the risk and try new experimental features.
+
+UPDATE
+=======
+This is a backported (from kernel 4.0) version of the psmouse kernel module, with support for ALPSv7 touchpads.
+With this patched module, users can drive Thinkpad 14 (and potentially T440/T440s/T440p/T/W540) using the new touchpad of 
+Lenovo which brought back the physical buttons.
+ALPS passthrough is now working. 
+
+Under the 'configX11' folder, you can find the files which you need to add under your
+system's '/etc/X11/xorg.conf.d'  path. First use 'xinput list' to double-check that the 
+'MatchProduct' string in the X11 configuration files, matches the name of the detected 
+(by your system) input devices.
+
 psmouse-dkms-alpsv7
 ===================
-
-Linux kernel driver for newer ALPS touchpads (as of Mar 2014)
 
 QUICK START
 -----------

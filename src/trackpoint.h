@@ -11,6 +11,10 @@
 #ifndef _TRACKPOINT_H
 #define _TRACKPOINT_H
 
+
+#define INPUT_PROP_POINTING_STICK	0x05	/* is a pointing stick */		
+
+
 /*
  * These constants are from the TrackPoint System
  * Engineering documentation Version 4 from IBM Watson
@@ -70,6 +74,9 @@
 #define TP_UP_THRESH		0x5A	/* Used to generate a 'click' on Z-axis */
 #define TP_Z_TIME		0x5E	/* How sharp of a press */
 #define TP_JENKS_CURV		0x5D	/* Minimum curvature for double click */
+#define TP_DRIFT_TIME		0x5F	/* How long a 'hands off' condition */
+					/* must last (x*107ms) for drift */
+					/* correction to occur */
 
 /*
  * Toggling Flag bits
@@ -120,6 +127,7 @@
 #define TP_DEF_UP_THRESH	0xFF
 #define TP_DEF_Z_TIME		0x26
 #define TP_DEF_JENKS_CURV	0x87
+#define TP_DEF_DRIFT_TIME	0x05
 
 /* Toggles */
 #define TP_DEF_MB		0x00
@@ -137,6 +145,7 @@ struct trackpoint_data
 	unsigned char draghys, mindrag;
 	unsigned char thresh, upthresh;
 	unsigned char ztime, jenks;
+	unsigned char drift_time;
 
 	/* toggles */
 	unsigned char press_to_select;
@@ -154,3 +163,4 @@ inline int trackpoint_detect(struct psmouse *psmouse, bool set_properties)
 #endif /* CONFIG_MOUSE_PS2_TRACKPOINT */
 
 #endif /* _TRACKPOINT_H */
+
