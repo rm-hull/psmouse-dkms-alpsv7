@@ -42,7 +42,7 @@ Run the following commands in your shell **__as root__**:
     cd /tmp
     git clone http://github.com/he1per/psmouse-dkms-alpsv7
     cd psmouse-dkms-alpsv7
-    ./install.sh
+    sudo ./install.sh
 ```
 
 This will build and install the updated `psmouse` module for your current kernel.
